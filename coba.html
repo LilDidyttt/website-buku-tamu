@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Apotek Online</title>
+        <style>
+                    body {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        background-color: #f4f4f4;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100vh;
+                    }
+
+                    h1 {
+                        color: #333;
+                    }
+
+                    form {
+                        background-color: #fff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        width: 300px;
+                        margin-top: 20px;
+                    }
+
+                    label {
+                        display: block;
+                        margin: 10px 0;
+                        color: #333;
+                    }
+
+                    input,
+                    select {
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 15px;
+                        box-sizing: border-box;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                    }
+
+                    button {
+                        background-color: #4CAF50;
+                        color: #fff;
+                        padding: 12px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        width: 100%;
+                        transition: background-color 0.3s ease;
+                    }
+
+                    button:hover {
+                        background-color: #45a049;
+                    }
+
+            #transactionResult {
+                        margin-top: 20px;
+                        padding: 20px;
+                        width: 300px;
+                        border-radius: 8px;
+                        background-color: #4CAF50;
+                        color: #fff;
+                        text-align: center;
+        </style>
+    </head>
+
+    <body>
+        <h1>Apotek Online</h1>
+
+        <form id="transactionForm">
+            <label for="namaObat">Nama Obat:</label>
+            <input type="text" id="namaObat" name="namaObat" required />
+
+            <label for="penyakit">Pilih Penyakit:</label>
+            <select id="penyakit" name="penyakit" required>
+                <option value="flu">Flu</option>
+                <option value="demam">Demam</option>
+                <option value="sakitKepala">Sakit Kepala</option>
+                <!-- Tambahkan opsi penyakit lain jika diperlukan -->
+            </select>
+
+            <label for="jumlah">Jumlah:</label>
+            <input type="number" id="jumlah" name="jumlah" required />
+
+            <button type="button" onclick="submitTransaction()">
+                Proses Transaksi
+            </button>
+        </form>
+
+        <div id="transactionResult">
+            <script>
+                function submitTransaction() {
+                    var namaObat = document.getElementById("namaObat").value;
+                    var penyakit = document.getElementById("penyakit").value;
+                    var jumlah = parseInt(
+                        document.getElementById("jumlah").value
+                    );
+
+                    // Proses transaksi bisa diimplementasikan sesuai kebutuhan
+
+                    var resultMessage =
+                        "Transaksi berhasil! Obat " +
+                        namaObat +
+                        " untuk penyakit " +
+                        penyakit +
+                        " sebanyak " +
+                        jumlah +
+                        " telah diproses.";
+
+                    document.getElementById("transactionResult").innerHTML =
+                        resultMessage;
+                }
+            </script>
+        </div>
+    </body>
+</html>
